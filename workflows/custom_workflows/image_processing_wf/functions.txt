@@ -1,0 +1,9 @@
+multimedia, aggregator
+multimedia, alexnet
+multimedia, fetch_data
+multimedia, flip
+multimedia, grayscale
+multimedia, mobilenet
+multimedia, resize
+multimedia, resnet
+multimedia, rotate

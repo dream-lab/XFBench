@@ -1,0 +1,7 @@
+text, aggregate_lines
+text, encrypt
+text, merge_aggregate
+text, text_data_gen
+text, single_string
+text, text_sort
+text, trigger

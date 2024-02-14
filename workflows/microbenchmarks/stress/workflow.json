@@ -1,0 +1,36 @@
+{
+    "WorkflowName": "StressFns",
+    "Nodes": [
+        {
+            "microbenchmarks": "iostress",
+            "code":"IOSTR",
+            "nodes":["IOStress"]
+        },
+        {
+            "microbenchmarks": "cpustress_int",
+            "code":"CPSIN",
+            "nodes":["CPUStressInt"]
+        },
+        {
+            "microbenchmarks": "cpustress_float",
+            "code":"CPSFL",
+            "nodes":["CPUStressFloat"]
+        },
+        {
+            "microbenchmarks": "memstress",
+            "code":"MEMST",
+            "nodes":["MemStress"]
+        }
+    ],
+    "Edges": [
+        {
+            "IOStress":["CPUStressInt"]
+        },
+        {
+            "CPUStressInt":["CPUStressFloat"]
+        },
+        {
+            "CPUStressFloat":["MemStress"]
+        }
+    ]
+}

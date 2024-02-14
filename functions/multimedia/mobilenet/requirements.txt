@@ -1,0 +1,5 @@
+numpy
+onnxruntime==1.15.1
+pillow
+psutil
+py-cpuinfo

@@ -1,0 +1,50 @@
+{
+    "WorkflowName": "graph",
+    "Nodes": [
+        {
+            "graph": "graph_gen",
+            "code":"GGEN",
+            "nodes":["graphGen"]
+        },
+        {
+            "graph": "graph_bft",
+            "code":"GBFT",
+            "nodes":["graphBft"]
+        },
+        {
+            "graph": "graph_mst",
+            "code":"GMST",
+            "nodes":["graphMst"]
+        },
+        {
+            "graph": "pagerank",
+            "code":"PGRK",
+            "nodes":["pagerank"]
+        },
+        {
+            "graph": "aggregate",
+            "code":"AGGR",
+            "nodes":["aggregate"]
+        }
+    ],
+    "Edges": [
+        {
+            "graphGen": ["graphBft"]
+        },
+        {
+            "graphGen": ["graphMst"]
+        },
+        {
+            "graphGen": ["pagerank"]
+        },
+        {
+            "graphBft": ["aggregate"]
+        },
+        {
+            "graphMst": ["aggregate"]
+        },
+        {
+            "pagerank": ["aggregate"]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "WorkflowName": "TextAnalytics",
+    "Nodes": [
+        {
+            "text":"trigger",
+            "nodes":["Trigger"],
+            "code":"TRIG"
+        },
+        {
+            "text":"text_data_gen",
+            "nodes":["TextFileData1","TextFileData2","TextFileData3","TextFileData4","TextFileData5","TextFileData6","TextFileData7","TextFileData8","TextFileData9","TextFileData10"],
+            "code":"TGEN"
+        },
+        {
+            "text":"text_sort",
+            "nodes":["TextSort","TextSort2","TextSort3","TextSort4","TextSort5","TextSort6","TextSort7","TextSort8","TextSort9","TextSort10"],
+            "code":"ASRT"
+        },
+        {
+            "text":"aggregate_lines",
+            "nodes":["AggregateLines"],
+            "code":"TAGG"
+        },
+        {
+            "text":"merge_aggregate",
+            "nodes":["MergeAggregate"],
+            "code":"MSRT"
+        },
+        {
+            "text":"single_string",
+            "nodes":["SingleString"],
+            "code":"TSST"
+        },
+        {
+            "text":"encrypt",
+            "nodes":["Encrypt"],
+            "code":"ENCR"
+        }
+
+    ],
+    
+    "Edges": [
+        {
+          "Trigger": ["TextFileData1"]
+        },
+        {
+          "Trigger": ["TextFileData2"]
+        },
+        {
+          "Trigger": ["TextFileData3"]
+        },
+        {
+          "Trigger": ["TextFileData4"]
+        },
+        {
+          "Trigger": ["TextFileData5"]
+        },
+        {
+          "Trigger": ["TextFileData6"]
+        },
+        {
+          "Trigger": ["TextFileData7"]
+        },
+        {
+          "Trigger": ["TextFileData8"]
+        },
+        {
+          "Trigger": ["TextFileData9"]
+        },
+        {
+          "Trigger": ["TextFileData10"]
+        },
+        {
+          "TextFileData1":["TextSort"]
+        },
+        {
+          "TextFileData2":["TextSort2"]
+        },
+        {
+          "TextFileData3":["TextSort3"]
+        },
+        {
+          "TextFileData4":["TextSort4"]
+        },
+        {
+          "TextFileData5":["TextSort5"]
+        },
+        {
+          "TextFileData6":["TextSort6"]
+        },
+        {
+          "TextFileData7":["TextSort7"]
+        },
+        {
+          "TextFileData8":["TextSort8"]
+        },
+        {
+          "TextFileData9":["TextSort9"]
+        },
+        {
+          "TextFileData10":["TextSort10"]
+        },
+        { 
+          "TextSort":["AggregateLines"]
+        },
+        { 
+          "TextSort2":["AggregateLines"]
+        },
+        { 
+          "TextSort3":["AggregateLines"]
+        },
+        { 
+          "TextSort4":["AggregateLines"]
+        },
+        { 
+          "TextSort5":["AggregateLines"]
+        },
+        { 
+          "TextSort6":["AggregateLines"]
+        },
+        { 
+          "TextSort7":["AggregateLines"]
+        },
+        { 
+          "TextSort8":["AggregateLines"]
+        },
+        { 
+          "TextSort9":["AggregateLines"]
+        },
+        { 
+          "TextSort10":["AggregateLines"]
+        },
+        { 
+          "AggregateLines":["MergeAggregate"]
+        },
+        {
+          "MergeAggregate":["SingleString"]
+        },
+        {
+          "SingleString":["Encrypt"]
+        }
+      ]
+}

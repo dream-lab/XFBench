@@ -1,0 +1,5 @@
+networkx
+numpy
+scipy
+pandas
+py-cpuinfo

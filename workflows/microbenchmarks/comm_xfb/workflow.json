@@ -1,0 +1,46 @@
+{
+    "WorkflowName": "CommStress",
+    "Nodes": [
+        {
+            "microbenchmarks": "comm_stress",
+            "code":"CMSTR",
+            "nodes":["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve"]
+        }
+    ],
+    "Edges": [
+        {
+            "One":["Two"]
+        },
+        {
+            "Two":["Three"]
+        },
+        {
+            "Three":["Four"]
+        },
+        {
+            "Four":["Five"]
+        },
+        {
+            "Five":["Six"]
+        },
+        {
+            "Six":["Seven"]
+        },
+        {
+            "Seven":["Eight"]
+        },
+        {
+            "Eight":["Nine"]
+        },
+        {
+            "Nine":["Ten"]
+        },
+        {
+            "Ten":["Eleven"]
+        },
+        {
+            "Eleven":["Twelve"]
+        }
+
+    ]
+}

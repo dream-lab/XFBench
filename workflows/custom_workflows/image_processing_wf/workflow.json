@@ -1,0 +1,77 @@
+{
+    "WorkflowName": "imageProcessing",
+    "Nodes": [
+      {
+          "multimedia": "fetch_data",
+          "nodes": ["fetchData"],
+          "code": "FDAT"
+      },
+      {
+          "multimedia": "grayscale",
+          "nodes": ["grayscale"],
+          "code": "GRAY"
+      },
+      {
+          "multimedia": "flip",
+          "nodes": ["flip"],
+          "code": "FLIP"
+      },
+      {
+          "multimedia": "rotate",
+          "nodes": ["rotate"],
+          "code": "RTIM"
+      },
+      {
+          "multimedia": "resize",
+          "nodes": ["resize"],
+          "code": "RESZ"
+      },
+      {
+          "multimedia": "resnet",
+          "nodes": ["resnet"],
+          "code": "RNET"
+      },
+      {
+          "multimedia": "alexnet",
+          "nodes": ["alexnet"],
+          "code": "ANET"
+      },
+      {
+          "multimedia": "mobilenet",
+          "nodes": ["mobilenet"],
+          "code": "MNET"
+      },
+      {
+          "multimedia": "aggregator",
+          "nodes": ["aggregator"],
+          "code": "AGGR"
+      }
+   ],
+    "Edges": [
+      {
+        "fetchData": ["grayscale"]
+      },
+      {
+        "grayscale": ["flip"]
+      },
+      {
+        "flip": ["rotate"]
+      },
+      {
+        "rotate": ["resize"]
+      },
+      {
+        "resize": ["resnet","alexnet","mobilenet"]
+      },
+      {
+        "resnet": ["aggregator"]
+      },
+      {
+        "alexnet": ["aggregator"]
+      },
+      {
+        "mobilenet" : ["aggregator"]
+      }
+    ]
+  }
+  
