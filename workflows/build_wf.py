@@ -15,7 +15,7 @@ parser.add_argument("--wf-user-directory",dest='wf_user_directory',type=str,help
 args = parser.parse_args()
 
 def get_func_path(func_name, category_name):
-    root_dir = os.getenv("XFAAS_WF_DIR")
+    root_dir = os.getenv("XFBENCH_DIR")
     folder_path = f'{root_dir}/functions/{category_name}/' + func_name
     return folder_path
 

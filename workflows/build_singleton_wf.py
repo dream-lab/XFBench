@@ -18,7 +18,7 @@ parser.add_argument("--node_name",dest='node_name',type=str,help="Node name")
 args = parser.parse_args()
 
 def get_func_path(func_name, category_name):
-    root_dir = os.getenv("XFAAS_WF_DIR")
+    root_dir = os.getenv("XFBENCH_DIR")
     folder_path = f'{root_dir}/functions/{category_name}/' + func_name
     return folder_path
 
@@ -130,7 +130,7 @@ function_name = args.function_name
 function_code = args.function_code
 node_name = args.node_name
 
-wf_base_path = f"{os.getenv('XFAAS_WF_DIR')}/workflows/singleton_workflows/{function_class}/{function_name}"
+wf_base_path = f"{os.getenv('XFBENCH_DIR')}/workflows/singleton_workflows/{function_class}/{function_name}"
 ##mkdirs if not exists
 if not os.path.exists(wf_base_path):
     os.makedirs(wf_base_path)
