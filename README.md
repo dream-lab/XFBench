@@ -85,6 +85,8 @@ We reproduce 5 key claims from the paper. To balance coverage, brevity and monet
 
 We've provided 5 scripts that each run one of the experiments with the relevant `xfbench_run.py` parameters, and then invoke the `xfbench_plot.py` script of the logs to plot the results similar to the figures from the main paper.
 
+NOTE: AWS being very stable, the reproduced numbers should match with the artifact evaluation results. However Azure being unstable becomes undeterministic at extreme workloads, hence the numbers might differ. But the trend from the paper will always follow, as can be seen from the plots below. 
+
 **Common Pre-requisites:** A running XFaaS container and confirmed sanity check from § II.
 
 ***A. Claim 1: Effect of Variation in Payload Sizes***
