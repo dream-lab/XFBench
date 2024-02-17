@@ -118,7 +118,7 @@ We reproduce the results from § V-C (dynamic RPS). The key claim is thatAWS ada
 
 **Estimated Time:** 140 mins
 
-Here, we reproduce results from § V-E(1) examining cold starts, with the observation thatboth *AWS and Azure have a cold start overhead as seen from higher E2E times when invoking the workflows after a pause*. The script below runs the a *gentle-step* workload (1 RPS execution, sleep for 5 mins, repeat 10 times) on a singleton workflow having the PageRank function. The relevant plots in the paper are Figs. 9a and 9b, which are together reproduced as a single plot after the execution of this script under `/plots/gentle_step_violin.pdf`.
+Here, we reproduce results from § V-E(1) examining cold starts, with the observation thatboth *AWS and Azure have a cold start overhead as seen from higher E2E times when invoking the workflows after a pause*. The script below runs the a *gentle-step* workload (1 RPS execution, sleep for 5 mins, repeat 10 times) on a singleton workflow having the PageRank function. The relevant plots in the paper are Figs. 9a and 9b, which are together reproduced as a single plot after the execution of this script under `/plots/gentle_step_box.pdf`.
 
 ```
 1 ./scripts/run_gentle_step.sh
@@ -128,7 +128,7 @@ Here, we reproduce results from § V-E(1) examining cold starts, with the observ
 
 **Estimated Time:** 80 mins
 
-Lastly, we reproduce the scaling behaviors of the CSPs as described in § V-E, where we claim that *AWS is very stable and extremely good at scaling, while Azure exhibits poor scaling and becomes unstable at high rps load*. The script below executes a growing step workload (RPS increases exponentially from 1–128) on the PageRank singleton workflow. The results are shown in Fig. 10 of the paper, and reproduced under `plots/growing_step_timelines/` after the script finishes. The violin plot from Fig. ~8(b) of the paper will be reproduced under plots/growing_step_violin.pdf.
+Lastly, we reproduce the scaling behaviors of the CSPs as described in § V-E, where we claim that *AWS is very stable and extremely good at scaling, while Azure exhibits poor scaling and becomes unstable at high rps load*. The script below executes a growing step workload (RPS increases exponentially from 1–128) on the PageRank singleton workflow. The results are shown in Fig. 10 of the paper, and reproduced under `plots/growing_step_timelines/` after the script finishes. The box plot from Fig. ~8(b) of the paper will be reproduced under plots/growing_step_box.pdf.
 
 
 ```

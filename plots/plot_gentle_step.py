@@ -67,7 +67,7 @@ def plot_violin(god_list):
 
     ax.set_ylabel('Execution Time (sec)')
     xfaas_dir = os.getenv('XFBENCH_DIR')
-    plt.savefig(f"{xfaas_dir}/plots/gentle_step_violin.pdf",bbox_inches='tight')
+    plt.savefig(f"{xfaas_dir}/plots/gentle_step_box.pdf",bbox_inches='tight')
 
 
 
