@@ -86,6 +86,7 @@ We've provided 5 scripts that each run one of the experiments with the relevant 
 **Common Pre-requisites:** A running XFaaS container and confirmed sanity check from § II.
 
 ***A. Claim 1: Effect of Variation in Payload Sizes***
+
 **Estimated Time:** 50 mins
 
 We reproduce the results from § V-C (payload size variability). The key claim is that the *inter-function communication times increase with an increase in payload size*. Executing the command below will invoke the graph workflow on AWS and Azure with diverse payload sizes at a static 1 RPS. The relevant plot is in Fig. 5a. After running this experiment, a similar plot should be auto-generated in `plots/payload_variation.pdf`.
@@ -94,6 +95,7 @@ We reproduce the results from § V-C (payload size variability). The key claim i
 ```
 
 ***B. Claim 2: Effect of Variation In Requests Rate***
+
 **Estimated Time:** 60 mins
 
 We reproduce the results from § V-C (RPS variability). The key claim is that the *inter-function communication time and hence end-to-end (E2E) time increase sharply for Azure, while the E2E time remains stable for AWS when the RPS increases, denoting poor rate-scaling for Azure*. Running the script invokes the graph workflow in AWS and Azure with variation in RPS using a medium payload size. The plots from the runs will be placed in `plots/rps_variation.pdf`, and should be similar to Fig. 6b.
@@ -102,6 +104,7 @@ We reproduce the results from § V-C (RPS variability). The key claim is that th
 ```
 
 ***C. Claim 3: Effect of Dynamism in Request Rate***
+
 **Estimated Time:** 90 mins
 We reproduce the results from § V-C (dynamic RPS). The key claim is thatAWS adapts to incoming request rate variability quickly as compared to Azure, which is unstable. Running the script below will vary the dynamism of the request rate for the graph workflow using step, sawtooth and Alibaba distributions, using a medium payload. The relevant plot is Fig. 6c and Fig. 7. After running this experiment, a similar plot as Fig. 6c should be auto-generated in `plots/dynamism_variation.pdf`. To enhance the readability, we split Figs. 7 into separate plots for AWS and Azure for each rate-dynamism and place the timeline plots in `plots/dynamism_timelines`.
 
@@ -110,6 +113,7 @@ We reproduce the results from § V-C (dynamic RPS). The key claim is thatAWS ada
 ```
 
 ***D. Claim 4: Coldstart Behaviour***
+
 **Estimated Time:** 140 mins
 
 Here, we reproduce results from § V-E(1) examining cold starts, with the observation thatboth *AWS and Azure have a cold start overhead as seen from higher E2E times when invoking the workflows after a pause*. The script below runs the a *gentle-step* workload (1 RPS execution, sleep for 5 mins, repeat 10 times) on a singleton workflow having the PageRank function. The relevant plots in the paper are Figs. 9a and 9b, which are together reproduced as a single plot after the execution of this script under `/plots/gentle_step_violin.pdf`.
@@ -119,6 +123,7 @@ Here, we reproduce results from § V-E(1) examining cold starts, with the observ
 ```
 
 ***E. Claim 5: Scaling Behaviour***
+
 **Estimated Time:** 80 mins
 
 Lastly, we reproduce the scaling behaviors of the CSPs as described in § V-E, where we claim that *AWS is very stable and extremely good at scaling, while Azure exhibits poor scaling and becomes unstable at high rps load*. The script below executes a growing step workload (RPS increases exponentially from 1–128) on the PageRank singleton workflow. The results are shown in Fig. 10 of the paper, and reproduced under `plots/growing_step_timelines/` after the script finishes.
