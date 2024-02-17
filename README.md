@@ -1,9 +1,10 @@
 # XFBench: A Cross-Cloud Benchmark Suite for Evaluating FaaS Workflow Platforms
+
 ##### ***V. Kulkarni<sup>1</sup> , N. Reddy<sup>1</sup> , Tuhin Khare<sup>1</sup> , H. Mohan<sup>3</sup> , J. Murali<sup>3</sup> , Mohith A<sup>3</sup> , Ragul B<sup>3</sup> , S. Balajee<sup>3</sup> , Sanjjit S<sup>3</sup>, Swathika<sup>3</sup> , Vaishnavi S<sup>3</sup> , Yashasvee<sup>3</sup> , C. Babu<sup>3</sup> , A. S. Prasad<sup>2</sup> and Y. Simmhan<sup>1</sup>***
 
 <sup>1</sup> Indian Institute of Science, India ; <sup>2</sup> IIT, Ropar, India ; <sup>3</sup> SSN College of Engineering, India
 
-{varadk, simmhan}@iisc.ac.in,   abhinandansp@iitrpr.ac.in,  chitra@ssn.edu.in
+{varadk, simmhan}@iisc.ac.in,   <abhinandansp@iitrpr.ac.in>,  <chitra@ssn.edu.in>
 
 ### I. *Introduction*
 
@@ -15,9 +16,10 @@ XFBench is a multi-cloud benchmarking framework to evaluate FaaS workflow platfo
   
 - ***Zero-touch workload generation and reporting*** where users can configure and vary the workload parameters such as payload size, request rate and rate variability to generate workloads for the deployed workflows being benchmarked.
 
-We vary these workloads to help understand the behaviour of different CSPs for FaaS workflows. This artifact evaluation proposes to meet the requirements of **Results Reproduced (ROR-R)**. Our instructions are designed to help reproduce the benchmarking behavior of XFBench on AWS and Azure clouds, and reproduce the central results and claims in the main paper, as described below. The GitHub repository for the XFBench benchmark framework source code is at https://github.com/dream-lab/XFBench/tree/CCGRID2024. XFBench also depends on the XFaaS platform used for FaaS workflow deployment, available at https://github.com/dream-lab/XFaaS/tree/CCGRID2024. These have also been archived as *Open Research Objects (ORO)* at Zenodo with DOI: https://zenodo.org/records/10673612. The credentials required to run the workloads on AWS and Azure clouds have been emailed to the AE Chairs. We recommend that the AE evaluators follow the detailed instructions available in the XFBench GitHub page that go beyond this Appendix.
+We vary these workloads to help understand the behaviour of different CSPs for FaaS workflows. This artifact evaluation proposes to meet the requirements of **Results Reproduced (ROR-R)**. Our instructions are designed to help reproduce the benchmarking behavior of XFBench on AWS and Azure clouds, and reproduce the central results and claims in the main paper, as described below. The GitHub repository for the XFBench benchmark framework source code is at <https://github.com/dream-lab/XFBench/tree/CCGRID2024>. XFBench also depends on the XFaaS platform used for FaaS workflow deployment, available at <https://github.com/dream-lab/XFaaS/tree/CCGRID2024>. These have also been archived as *Open Research Objects (ORO)* at Zenodo with DOI: <https://zenodo.org/records/10673612>. The credentials required to run the workloads on AWS and Azure clouds have been emailed to the AE Chairs. We recommend that the AE evaluators follow the detailed instructions available in the XFBench GitHub page that go beyond this Appendix.
 
 ### II. ***Configuring and Running XFBench***
+
 We first establish that the artifacts are *Reusable Research Objects (ROR)* by providing the documentation to deploy and run XFBench in a functional manner that promotes reusability.
 
 #### *A. XFaas and XFBench Setup*
@@ -48,7 +50,9 @@ We provide a docker container with all the dependencies installed in the repo. L
 ```
 
 #### *B. Running XFBench*
+
 Before running these commands, you must be in the `bash` shell of the above container and in the `XFBench` folder.
+
 ```shell
 1 docker exec -it xfaas-container bash
 2 cd XFBench
@@ -71,6 +75,7 @@ The `bin/serwo/xfbench_run.py` command-line is used to *deploy a workflow* and *
 ```
 
 #### *Sanity Check*
+
 **Estimated Time:** 10 mins
 A sample script `scripts/sanity_check.sh` can be used to verify the correctness using a simple workload that runs the graph workflow for **10 seconds** using a small payload at 1 RPS. 
 We run a correctness check script once the sanity check experiment is done. We check to see if the run has created any output logs, which is a measure for checkong successful run. You would see the following message: 'XFBench is Successfully Setup' : if successful. Will fail with an exception if not. 
@@ -94,18 +99,38 @@ NOTE: AWS being very stable, the reproduced numbers should match with the artifa
 **Estimated Time:** 50 mins
 
 We reproduce the results from § V-C (payload size variability). The key claim is that the *inter-function communication times increase with an increase in payload size*. Executing the command below will invoke the graph workflow on AWS and Azure with diverse payload sizes at a static 1 RPS. The relevant plot is in Fig. 5a. After running this experiment, a similar plot should be auto-generated in `plots/payload_variation.pdf`.
+
 ```
 1 ./scripts/run_payload_variation_experiments.sh
 ```
+
+##### Plots in paper (Fig 5a)
+
+<img src="figures/c1-5a-paper.png" alt="c1-5a-paper" width="250"/>
+
+
+##### Expected plots after evalution
+
+<img src="figures/c1-5a-ae.png" alt="c1-5a-ae" width="250"/>
 
 ***B. Claim 2: Effect of Variation In Requests Rate***
 
 **Estimated Time:** 60 mins
 
 We reproduce the results from § V-C (RPS variability). The key claim is that the *inter-function communication time and hence end-to-end (E2E) time increase sharply for Azure, while the E2E time remains stable for AWS when the RPS increases, denoting poor rate-scaling for Azure*. Running the script invokes the graph workflow in AWS and Azure with variation in RPS using a medium payload size. The plots from the runs will be placed in `plots/rps_variation.pdf`, and should be similar to Fig. 6b.
+
 ```
 1 ./scripts/run_rps_variation_experiments.sh
 ```
+
+##### Plots in paper (Fig 6b)
+
+<img src="figures/c2-6b-paper.png" alt="c2-6b-paper" width="250"/>
+
+
+##### Expected plots after evalution
+
+<img src="figures/c2-6b-ae.png" alt="c2-6b-ae" width="250"/>
 
 ***C. Claim 3: Effect of Dynamism in Request Rate***
 
@@ -116,6 +141,30 @@ We reproduce the results from § V-C (dynamic RPS). The key claim is thatAWS ada
 1 ./scripts/run_dynamism_variation_experiments.sh
 ```
 
+##### Plots in paper
+
+##### Fig 6c
+<img src="figures/c3-6c-paper.png" width="250" />
+
+##### Fig 7
+<img src="figures/c3-7-paper.png" width="800" height="250"/> 
+
+
+##### Expected plots after evalution
+
+##### Fig 6c
+<img src="figures/c3-6c-ae.png" alt="c2-6b-ae" width="250"/>
+
+##### Fig 7 (splits)
+<p float="left">
+  <img src="figures/c3-7-ae-1.png" width="250" />
+  <img src="figures/c3-7-ae-2.png" width="250"/> 
+  <img src="figures/c3-7-ae-3.png" width="250"/> 
+  <img src="figures/c3-7-ae-4.png" width="250"/> 
+  <img src="figures/c3-7-ae-5.png" width="250"/> 
+  <img src="figures/c3-7-ae-6.png" width="250"/> 
+</p>
+
 ***D. Claim 4: Coldstart Behaviour***
 
 **Estimated Time:** 140 mins
@@ -125,6 +174,16 @@ Here, we reproduce results from § V-E(1) examining cold starts, with the observ
 ```
 1 ./scripts/run_gentle_step.sh
 ```
+##### Plots in paper
+
+##### Fig 9a and 9b
+<img src="figures/c4-9a9b-paper.png" width="600" />
+
+
+##### Expected plots after evalution
+
+##### Fig 9a and 9b
+<img src="figures/c4-9a9b-ae.png" alt="c2-6b-ae" width="300"/>
 
 ***E. Claim 5: Scaling Behaviour***
 
@@ -137,3 +196,23 @@ Lastly, we reproduce the scaling behaviors of the CSPs as described in § V-E, w
 1 ./scripts/run_growing_step.sh
 ```
 
+##### Plots in paper
+
+##### Fig 8b
+<img src="figures/c5-8b-paper.png" width="250" />
+
+##### Fig 10
+<img src="figures/c5-10-paper.png" width="600" />
+
+
+
+##### Expected plots after evalution
+
+##### Fig 8b
+<img src="figures/c5-8b-ae.png" width="250" />
+
+##### Fig 10 (splits)
+<p float="left">
+  <img src="figures/c5-10-ae-1.png" width="250" />
+  <img src="figures/c5-10-ae-2.png" width="250"/> 
+</p>
