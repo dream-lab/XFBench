@@ -30,19 +30,21 @@ We provide a docker container with all the dependencies installed in the repo. L
 
 ```shell
 1 git clone -b CCGRID2024 https://github.com/dream-lab/XFaaS.git
-2 docker build -t xfaas:1..
-3 docker run -d --name xfaas-container xfaas:1.
-4 docker exec -it xfaas-container bash
-5 %% We are inside the bash shell of the container
-6 az login -u <username> -p <password>
-7 export AZURE_SUBSCRIPTION_ID=<Azure account subscription id>
-8 aws configure
-9 git clone -b CCGRID2024 https://github.com/dream-lab/XFaaS.git
-10 git clone -b CCGRID2024 https://github.com/dream-lab/XFBench.git
-11 export XFBENCH_DIR=/XFBench
-12 export XFAAS_DIR=/XFaaS
-13 cd XFBench
-14 pip3 install -r requirements.txt
+2 cd XFaaS
+3 docker build -t xfaas:1..
+4 docker run -d --name xfaas-container xfaas:1.
+5 docker exec -it xfaas-container bash
+6 %% We are inside the bash shell of the container
+7 az login -u <username> -p <password>
+8 export AZURE_SUBSCRIPTION_ID=<Azure account subscription id>
+9 aws configure
+10 git clone -b CCGRID2024 https://github.com/dream-lab/XFaaS.git
+11 git clone -b CCGRID2024 https://github.com/dream-lab/XFBench.git
+12 cp -r XFaaS/serwo /XFBench/bin/
+13 export XFBENCH_DIR=/XFBench
+14 export XFAAS_DIR=/XFaaS
+15 cd XFBench
+16 pip3 install -r requirements.txt
 ```
 
 #### *B. Running XFBench*
