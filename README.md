@@ -19,7 +19,7 @@ We vary these workloads to help understand the behaviour of different CSPs for F
 ###II. ***CONFIGURING AND RUNNING XFBench***
 We first establish that the artifacts are *Reusable Research Objects (ROR)* by providing the documentation to deploy and run XFBench in a functional manner that promotes reusability.
 
-####*A. XFaas and XFBench Setup*
+#### *A. XFaas and XFBench Setup*
 
 **Estimated Time:** 30 mins
 
@@ -44,7 +44,7 @@ We provide a docker container with all the dependencies installed in the repo. L
 14 pip3 install -r requirements.txt
 ```
 
-####*B. Running XFBench*
+#### *B. Running XFBench*
 Before running these commands, you must be in the `bash` shell of the above container and in the `XFBench` folder.
 ```shell
 1 docker exec -it xfaas-container bash
@@ -67,7 +67,7 @@ The `bin/serwo/xfbench_run.py` command-line is used to *deploy a workflow* and *
 11 --wf-user-directory <absolute path to user workflow>
 ```
 
-####*Sanity Check*
+#### *Sanity Check*
 **Estimated Time:** 10 mins
 A sample script `scripts/sanity_check.sh` can be used to verify the correctness using a simple workload that runs the graph workflow for **10 seconds** using a small payload at **1 RPS**?. ****TODO Yogesh: What is the output expected? How do they know it ran properly? Post-condition?**
 ```shell
@@ -76,7 +76,8 @@ A sample script `scripts/sanity_check.sh` can be used to verify the correctness 
 **TODO Yogesh: do we automatically cleanup the workflow deploy-
 ment?****
 
-###III. ***REPRODUCING XFBench RESULTS***
+### III. ***REPRODUCING XFBench RESULTS***
+
 We reproduce 5 key claims from the paper. To balance coverage, brevity and monetary cost, we validate a large and representative subset of our experiments to establish these claims. Specifically, we use the *Graph Workflow* on the US region(East USA/North Virginia) of *AWS* and *Azure*. We vary three workload dimensions to analyze their responses: *Payload Size* (Small/Medium/Large),   *Requests per Second* (RPS; 1, 4, 8 rps), and *Request Rate Dynamism* (Step, Sawtooth and Alibaba). We also evaluate *cold starts* and *scaling behavior* using a gentle step and a growing step. These reproduce results from § V-C and § V-E (subset of Figs. 5–10) in the paper, and **TODO cost≈US$???** for a single run. For brevity, we omit § V-B which are just micro-benchmarks, temporal behavior runs in § V-D which take 24 hours each, and the contrast with other regions (Southeast-Asia, SEA) and workflows (Text, Image).
 
 We've provided 5 scripts that each run one of the experiments with the relevant `xfbench_run.py` parameters, and then invoke the `xfbench_plot.py` script of the logs to plot the results similar to the figures from the main paper.
