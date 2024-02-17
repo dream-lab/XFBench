@@ -1,8 +1,8 @@
 # XFBench: A Cross-Cloud Benchmark Suite for Evaluating FaaS Workflow Platforms
-##### ***V. Kulkarni^1^ , N. Reddy^1^ , Tuhin Khare^1^ , H. Mohan^3^ , J. Murali^3^ , Mohith A^3^ , Ragul B^3^ , S. Balajee^3^ , Sanjjit S^3^, Swathika^3^ , Vaishnavi S^3^ , Yashasvee^3^ , C. Babu^3^ , A. S. Prasad^2^ and Y. Simmhan^1^***
+##### ***V. Kulkarni<sup>1</sup> , N. Reddy<sup>1</sup> , Tuhin Khare<sup>1</sup> , H. Mohan<sup>3</sup> , J. Murali<sup>3</sup> , Mohith A<sup>3</sup> , Ragul B<sup>3</sup> , S. Balajee<sup>3</sup> , Sanjjit S<sup>3</sup>, Swathika<sup>3</sup> , Vaishnavi S<sup>3</sup> , Yashasvee<sup>3</sup> , C. Babu<sup>3</sup> , A. S. Prasad<sup>2</sup> and Y. Simmhan<sup>1</sup>***
 
-*^1^ Indian Institute of Science, India ; ^2^ IIT, Ropar, India ; ^3^ SSN College of Engineering, India
-{varadk, simmhan}@iisc.ac.in,   abhinandansp@iitrpr.ac.in,  chitra@ssn.edu.in*
+*<sup>1</sup> Indian Institute of Science, India ; <sup>2</sup> IIT, Ropar, India ; <sup>3</sup> SSN College of Engineering, India
+{varadk, simmhan}@iisc.ac.in,   abhinandansp@iitrpr.ac.in,  chitra@ssn.edu.in*ð
 
 ### I. *INTRODUCTION*
 
