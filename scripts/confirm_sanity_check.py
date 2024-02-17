@@ -125,7 +125,7 @@ if __name__ == "__main__":
     print(cumm_comms)
 
     if (len(cumm_execs)) >=1:
-        print('Sanity check is successful!, XFBench is Successfully Setup')
+        print('XFBench is Successfully Setup')
 
     
 
