@@ -1,7 +1,7 @@
 # XFBench: A Cross-Cloud Benchmark Suite for Evaluating FaaS Workflow Platforms
 ##### ***V. Kulkarni<sup>1</sup> , N. Reddy<sup>1</sup> , Tuhin Khare<sup>1</sup> , H. Mohan<sup>3</sup> , J. Murali<sup>3</sup> , Mohith A<sup>3</sup> , Ragul B<sup>3</sup> , S. Balajee<sup>3</sup> , Sanjjit S<sup>3</sup>, Swathika<sup>3</sup> , Vaishnavi S<sup>3</sup> , Yashasvee<sup>3</sup> , C. Babu<sup>3</sup> , A. S. Prasad<sup>2</sup> and Y. Simmhan<sup>1</sup>***
 
-*<sup>1</sup> Indian Institute of Science, India ; <sup>2</sup> IIT, Ropar, India ; <sup>3</sup> SSN College of Engineering, India
+<sup>1</sup> Indian Institute of Science, India ; <sup>2</sup> IIT, Ropar, India ; <sup>3</sup> SSN College of Engineering, India
 
 {varadk, simmhan}@iisc.ac.in,   abhinandansp@iitrpr.ac.in,  chitra@ssn.edu.in
 
