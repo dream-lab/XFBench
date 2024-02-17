@@ -4,7 +4,7 @@
 *<sup>1</sup> Indian Institute of Science, India ; <sup>2</sup> IIT, Ropar, India ; <sup>3</sup> SSN College of Engineering, India
 {varadk, simmhan}@iisc.ac.in,   abhinandansp@iitrpr.ac.in,  chitra@ssn.edu.in*ð
 
-### I. *INTRODUCTION*
+### I. *Introduction*
 
 XFBench is a multi-cloud benchmarking framework to evaluate FaaS workflow platforms of public/ private cloudvproviders such as AWS Lambda, Azure Function, etc. It offers:
 
@@ -16,7 +16,7 @@ XFBench is a multi-cloud benchmarking framework to evaluate FaaS workflow platfo
 
 We vary these workloads to help understand the behaviour of different CSPs for FaaS workflows. This artifact evaluation proposes to meet the requirements of **Results Reproduced (ROR-R)**. Our instructions are designed to help reproduce the benchmarking behavior of XFBench on AWS and Azure clouds, and reproduce the central results and claims in the main paper, as described below. The GitHub repository for the XFBench benchmark framework source code is at https://github.com/dream-lab/XFBench/tree/CCGRID2024. XFBench also depends on the XFaaS platform used for FaaS workflow deployment, available at https://github.com/dream-lab/XFaaS/tree/CCGRID2024. These have also been archived as *Open Research Objects (ORO)* at Zenodo with DOI: https://zenodo.org/records/10673612. The credentials required to run the workloads on AWS and Azure clouds have been emailed to the AE Chairs. We recommend that the AE evaluators follow the detailed instructions available in the XFBench GitHub page that go beyond this Appendix.
 
-###II. ***CONFIGURING AND RUNNING XFBench***
+### II. ***Configuring and Running XFBench***
 We first establish that the artifacts are *Reusable Research Objects (ROR)* by providing the documentation to deploy and run XFBench in a functional manner that promotes reusability.
 
 #### *A. XFaas and XFBench Setup*
@@ -76,7 +76,7 @@ A sample script `scripts/sanity_check.sh` can be used to verify the correctness 
 **TODO Yogesh: do we automatically cleanup the workflow deploy-
 ment?****
 
-### III. ***REPRODUCING XFBench RESULTS***
+### III. ***Reproducing XFBench Results***
 
 We reproduce 5 key claims from the paper. To balance coverage, brevity and monetary cost, we validate a large and representative subset of our experiments to establish these claims. Specifically, we use the *Graph Workflow* on the US region(East USA/North Virginia) of *AWS* and *Azure*. We vary three workload dimensions to analyze their responses: *Payload Size* (Small/Medium/Large),   *Requests per Second* (RPS; 1, 4, 8 rps), and *Request Rate Dynamism* (Step, Sawtooth and Alibaba). We also evaluate *cold starts* and *scaling behavior* using a gentle step and a growing step. These reproduce results from § V-C and § V-E (subset of Figs. 5–10) in the paper, and **TODO cost≈US$???** for a single run. For brevity, we omit § V-B which are just micro-benchmarks, temporal behavior runs in § V-D which take 24 hours each, and the contrast with other regions (Southeast-Asia, SEA) and workflows (Text, Image).
 
