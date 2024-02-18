@@ -62,8 +62,8 @@ def plot_stacked_bar(a,b):
     ax.set_xlabel('Payload Size Variation')
     ax.legend()
     # plt.show()
-    xfaas_dir = os.getenv('XFAAS_DIR')
-    plt.savefig(f"{xfaas_dir}/ccgrid2024_artifact_plots/payload_variation.pdf",bbox_inches='tight')
+    xfaas_dir = os.getenv('XFBENCH_DIR')
+    plt.savefig(f"{xfaas_dir}/plots/payload_variation.pdf",bbox_inches='tight')
     
 
 def get_cumm_time(function_times, edge_times, num_iters):
@@ -114,7 +114,7 @@ def get_cumm_time(function_times, edge_times, num_iters):
 if __name__ == "__main__":
     wf_user_directory = parser.parse_args().wf_user_directory + '/workflow-gen'
 
-    xfaas_dir = os.getenv('XFAAS_DIR')
+    xfaas_dir = os.getenv('XFBENCH_DIR')
     deployments_file_path = f"{xfaas_dir}/deployments.txt"
 
     deployments = []
