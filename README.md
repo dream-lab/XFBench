@@ -157,12 +157,12 @@ We reproduce the results from § V-C (dynamic RPS). The key claim is thatAWS ada
 
 ##### Fig 7 (splits)
 <p float="left">
-  <img src="figures/c3-7-ae-1.png" width="250" />
   <img src="figures/c3-7-ae-2.png" width="250"/> 
   <img src="figures/c3-7-ae-3.png" width="250"/> 
-  <img src="figures/c3-7-ae-4.png" width="250"/> 
+  <img src="figures/c3-7-ae-1.png" width="250" />
   <img src="figures/c3-7-ae-5.png" width="250"/> 
   <img src="figures/c3-7-ae-6.png" width="250"/> 
+  <img src="figures/c3-7-ae-4.png" width="250"/> 
 </p>
 
 ***D. Claim 4: Coldstart Behaviour***
